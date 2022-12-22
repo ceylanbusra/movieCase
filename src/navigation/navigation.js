@@ -6,7 +6,6 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import Home from "../screen/Home";
 import Detail from "../screen/Detail";
 import Splash from "../screen/Splash";
-import PreviosList from "../screen/PreviosList";
 
 const Stack = createNativeStackNavigator();
 const RootRouter = (props) => {
@@ -30,7 +29,6 @@ const RootRouter = (props) => {
           component={Home}
         />
         <Stack.Screen name="Detail" component={Detail} />
-        <Stack.Screen name="PreviousLit" component={PreviosList} />
       </Stack.Navigator>
     </NavigationContainer>
   );
