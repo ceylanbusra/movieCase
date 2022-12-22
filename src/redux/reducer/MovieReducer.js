@@ -2,6 +2,9 @@ const initial_state = {
   movies: [],
   movieDetail: {},
   movieButton: [],
+  gameButton: [],
+  seriesButton: [],
+  yearButton: [],
 };
 const MovieReducer = (state = initial_state, action) => {
   switch (action.type) {
@@ -9,8 +12,6 @@ const MovieReducer = (state = initial_state, action) => {
       return {
         ...state,
         movies: action.payload,
-
-        // login: [...state.login, action.payload],
       };
     case "MOVIE_DETAIL_SUCCESS":
       return {
@@ -21,6 +22,17 @@ const MovieReducer = (state = initial_state, action) => {
       return {
         ...state,
         movieButton: action.payload,
+      };
+
+    case "EPISODE_BUTTON_SUCCESS":
+      return {
+        ...state,
+        gameButton: action.payload,
+      };
+    case "SERIES_BUTTON_SUCCESS":
+      return {
+        ...state,
+        seriesButton: action.payload,
       };
 
     case "MOVIE_LIST_RESET":

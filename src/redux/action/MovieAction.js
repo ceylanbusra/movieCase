@@ -2,7 +2,7 @@ import axios from "axios";
 import { Alert } from "react-native";
 
 export const getMovie = (data, page) => {
-  console.log("gelen değerler data :", data, "page", page);
+  //("gelen değerler data :", data, "page", page);
   return (dispatch) => {
     dispatch({ type: "MOVIE_SEARCH_REQUEST" }),
       // .get(`http://www.omdbapi.com/?apikey=4c8e58fe&s=star war&page=1`)
@@ -12,16 +12,32 @@ export const getMovie = (data, page) => {
           const movieButton = res.data.Search.filter(
             (item) => item.Type === "movie"
           );
+          const episodeButton = res.data.Search.filter(
+            (item) => item.Type === "game"
+          );
+          const series = res.data.Search.filter(
+            (item) => item.Type === "series"
+          );
           dispatch({ type: "MOVIE_SEARCH_SUCCESS", payload: res.data.Search });
-          console.log(res.data, "response.data");
+          //(res.data, "response.data");
           dispatch({
             type: "MOVIE_BUTTON_SUCCESS",
             payload: movieButton,
           });
+          dispatch({
+            type: "EPISODE_BUTTON_SUCCESS",
+            payload: episodeButton,
+          });
+          dispatch({
+            type: "SERIES_BUTTON_SUCCESS",
+            payload: series,
+          });
         })
+
         .catch((err) => {
-          console.error("get ile gelen error", err);
-          Alert.alert("Maalesef isteğinizi şu an gerçekleştiremiyoruz..");
+          Alert.alert(
+            "Aradığınız içerik maalesef bulunamadı.Lütfen farklı şekilde aramayı deneyiniz.."
+          );
         });
   };
 };
@@ -29,12 +45,10 @@ export const getMovie = (data, page) => {
 export const getMovieDetail = (id) => {
   return (dispatch) => {
     dispatch({ type: "MOVIE_DETAIL_REQUEST" }),
-      // .get(`http://www.omdbapi.com/?apikey=4c8e58fe&s=star war&page=1`)
       axios
         .get(`http://www.omdbapi.com/?apikey=4c8e58fe&i=${id}`)
         .then((res) => {
           dispatch({ type: "MOVIE_DETAIL_SUCCESS", payload: res.data });
-          console.log(res.data, "response.data");
         })
         .catch((err) => {
           console.error("get ile gelen error", err);

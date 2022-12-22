@@ -6,9 +6,10 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import Home from "../screen/Home";
 import Detail from "../screen/Detail";
 import Splash from "../screen/Splash";
+import PreviosList from "../screen/PreviosList";
 
 const Stack = createNativeStackNavigator();
-const RootRouter = () => {
+const RootRouter = (props) => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Splash">
@@ -22,11 +23,6 @@ const RootRouter = () => {
         <Stack.Screen
           options={{
             headerTitleStyle: {},
-            headerRight: () => (
-              <TouchableOpacity>
-                <FontAwesome5 name="home" size={24} color="#6695b5" />
-              </TouchableOpacity>
-            ),
             headerLeft: () => <></>,
             headerTitleAlign: "center",
           }}
@@ -34,6 +30,7 @@ const RootRouter = () => {
           component={Home}
         />
         <Stack.Screen name="Detail" component={Detail} />
+        <Stack.Screen name="PreviousLit" component={PreviosList} />
       </Stack.Navigator>
     </NavigationContainer>
   );

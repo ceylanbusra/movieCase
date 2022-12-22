@@ -6,8 +6,8 @@ import { PersistGate } from "redux-persist/integration/react";
 
 const App = () => {
   if (__DEV__) {
-    import("./src/utils/ReactotronConfig.js").then(() =>
-      console.log("Reactotron Configured")
+    import("./src/utils/ReactotronConfig.js").then(
+      () => "Reactotron Configured"
     );
   }
 

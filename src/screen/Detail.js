@@ -10,19 +10,17 @@ import {
   ScrollView,
 } from "react-native";
 import React, { useEffect } from "react";
+import LottieView from "lottie-react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { getMovieDetail } from "../redux/action/MovieAction";
-
-//comment
 
 const Detail = (props) => {
   const dispatch = useDispatch();
   const item = props.route.params;
   const id = item.id;
-  console.log("id:", id);
+
   const { movieDetail } = useSelector((state) => state.movie);
-  console.log("movie detail", movieDetail);
-  console.log("movie actor", movieDetail);
+
   useEffect(() => {
     dispatch(getMovieDetail(id));
   }, []);
@@ -32,27 +30,38 @@ const Detail = (props) => {
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
       <SafeAreaView style={{ flex: 1 }}>
-        <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-          <Image style={styles.Image} source={{ uri: movieDetail?.Poster }} />
-          <View style={{ padding: 10, marginVertical: 10 }}>
-            <Text style={styles.title}>{movieDetail?.Title}</Text>
-            <View
-              style={{
-                flexDirection: "row",
-                marginTop: 10,
-                justifyContent: "space-between",
-                marginVertical: 15,
-              }}
-            >
-              <Text style={styles.director}>Director:</Text>
-              <Text style={{ fontSize: 16 }}>{movieDetail?.Director}</Text>
-              <Text style={styles.runTime}>Run Time:</Text>
-              <Text style={{ fontSize: 16 }}>{movieDetail?.Runtime}</Text>
+        {movieDetail !== undefined || movieDetail !== {} ? (
+          <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+            <Image style={styles.Image} source={{ uri: movieDetail?.Poster }} />
+            <View style={{ padding: 10, marginVertical: 10 }}>
+              <Text style={styles.title}>{movieDetail?.Title}</Text>
+              <View style={styles.container2}>
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={styles.director}>Director:</Text>
+                  <Text style={{ fontSize: 16 }}>{movieDetail?.Director}</Text>
+                </View>
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={styles.runTime}>Run Time:</Text>
+                  <Text style={{ fontSize: 16 }}>{movieDetail?.Runtime}</Text>
+                </View>
+              </View>
+              <Text style={styles.plot2}>Plot</Text>
+              <Text style={styles.plot}>{movieDetail?.Plot}</Text>
             </View>
-            <Text style={styles.plot2}>Plot</Text>
-            <Text style={styles.plot}>{movieDetail?.Plot}</Text>
-          </View>
-        </ScrollView>
+          </ScrollView>
+        ) : (
+          <LottieView
+            style={{
+              alignSelf: "center",
+              width: 100,
+              height: 100,
+              marginTop: 10,
+            }}
+            source={require("../../assets/loading.json")}
+            autoPlay
+            loop
+          />
+        )}
       </SafeAreaView>
     </View>
   );
@@ -66,7 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   Image: {
-    resizeMode: "stretxh",
+    resizeMode: "stretch",
     width: Dimensions.get("window").width / 1,
     height: Dimensions.get("window").height / 2.5,
     // width: "100%",
@@ -102,5 +111,12 @@ const styles = StyleSheet.create({
   plot2: {
     fontSize: 20,
     fontWeight: "500",
+  },
+  container2: {
+    flexDirection: "row",
+    marginTop: 10,
+    justifyContent: "space-between",
+    marginVertical: 15,
+    paddingHorizontal: 10,
   },
 });
