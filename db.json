@@ -1,0 +1,197 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "login": [
+    {
+      "id": 1,
+      "email": "busra@gmail.com",
+      "password": "Busra123"
+    },
+    {
+      "id": 2,
+      "email": "ayse@gmail.com",
+      "password": "Busra123"
+    },
+    {
+      "id": 3,
+      "email": "fatma@gmail.com",
+      "password": "Busra123"
+    },
+    {
+      "email": "Gsdfg",
+      "password": "gsdfgsd",
+      "id": 4
+    },
+    {
+      "email": "Fatma@gmail.com",
+      "password": "zsdxszdxfc",
+      "id": 5
+    },
+    {
+      "email": "fatma@gmail.com",
+      "password": "Busra123",
+      "id": 6
+    },
+    {
+      "email": "fatma@gmail.com",
+      "password": "Busra123",
+      "id": 7
+    },
+    {
+      "email": "fatma123@gmail.com",
+      "password": "Busra123",
+      "id": 8
+    },
+    {
+      "email": "fatma123@gmail.com",
+      "password": "Busra123",
+      "id": 9
+    },
+    {
+      "email": "Sdfgsdf",
+      "password": "dfsfg",
+      "id": 10
+    },
+    {
+      "email": "busra@gmail.com",
+      "password": "Busra123",
+      "id": 11
+    },
+    {
+      "email": "busra@gmail.com",
+      "password": "Busra123",
+      "id": 12
+    },
+    {
+      "email": "busra@gmail.com",
+      "password": "Busra123",
+      "id": 13
+    },
+    {
+      "email": "     ",
+      "password": "Busra123",
+      "id": 14
+    },
+    {
+      "email": "     ",
+      "password": "Busra123",
+      "id": 15
+    },
+    {
+      "email": "     ",
+      "password": "Busra123",
+      "id": 16
+    },
+    {
+      "email": "Ceylanbusra",
+      "password": "Busra123",
+      "id": 17
+    },
+    {
+      "email": "Ceylanbusra",
+      "password": "Busra123",
+      "id": 18
+    },
+    {
+      "email": "Ceylanbusra",
+      "password": "Busra123",
+      "id": 19
+    },
+    {
+      "email": "",
+      "password": "Busra123",
+      "id": 20
+    },
+    {
+      "email": "",
+      "password": "Busra123",
+      "id": 21
+    },
+    {
+      "email": "",
+      "password": "Busra123",
+      "id": 22
+    },
+    {
+      "email": "",
+      "password": "Busra123",
+      "id": 23
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 24
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 25
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 26
+    },
+    {
+      "email": "Fgsdfgsfg",
+      "password": "",
+      "id": 27
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "password": "Busra123",
+      "email": "busra@gmail.com",
+      "phone": "1-770-736-8031 x56442",
+      "website": "hildegard.org",
+      "company": {
+        "name": "Romaguera-Crona",
+        "catchPhrase": "Multi-layered client-server neural-net",
+        "bs": "harness real-time e-markets"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "email": "ayse@gmail.com",
+      "password": "Busra123",
+      "phone": "010-692-6593 x09125",
+      "website": "anastasia.net",
+      "company": {
+        "name": "Deckow-Crist",
+        "catchPhrase": "Proactive didactic contingency",
+        "bs": "synergize scalable supply-chains"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Clementine Bauch",
+      "username": "Samantha",
+      "email": "fatma@gmail.com",
+      "password": "Busra123",
+      "phone": "1-463-123-4447",
+      "website": "ramiro.info",
+      "company": {
+        "name": "Romaguera-Jacobson",
+        "catchPhrase": "Face to face bifurcated interface",
+        "bs": "e-enable strategic applications"
+      }
+    }
+  ]
+}
